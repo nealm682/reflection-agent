@@ -1,6 +1,8 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI 
 
+
+# Define the prompts. The user will provide the initial message, and the system will provide the prompt.
 reflection_prompt = ChatPromptTemplate.from_messages(
     [
         (
@@ -22,7 +24,8 @@ generation_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-
+# Define the language model
 llm = ChatOpenAI()
+# Define the chains
 generate_chain = generation_prompt | llm
 reflect_chain = reflection_prompt | llm
