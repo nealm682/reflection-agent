@@ -11,26 +11,34 @@ from chains import generate_chain, reflect_chain
 REFLECT = "reflect"
 GENERATE = "generate"
 
+# Define the nodes
+# Each node is a function that takes a list of messages and returns a list of messages
+# The first node is the generation node, which generates a new message
 def generation_node(state: Sequence[BaseMessage]):
     return generate_chain.invoke({"messages": state})
 
+# The second node is the reflection node, which reflects on the generated message
 def reflection_node(state: Sequence[BaseMessage]):
     res = reflect_chain.invoke({"messages": state})
     return [HumanMessage(content=res.content)]
 
+# Create the graph
 builder = MessageGraph()
 builder.add_node(GENERATE, generation_node)
 builder.add_node(REFLECT, reflection_node)
 builder.set_entry_point(GENERATE)
 
+# Add conditional edges. The first argument is the source node, the second is a function that takes the state and returns the destination node
 def should_continue(state: List[BaseMessage]):
     if len(state) > 6:
         return END
     return REFLECT
 
+# Add the conditional edges to the graph
 builder.add_conditional_edges(GENERATE, should_continue)
 builder.add_edge(REFLECT, GENERATE)
 
+# Compile the graph and print it
 graph = builder.compile()
 print(graph.get_graph().draw_mermaid())
 
