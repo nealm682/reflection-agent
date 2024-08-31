@@ -77,3 +77,5 @@ This project relies on the following key Python packages:
 - **python-dotenv**: For loading environment variables from a `.env` file.
 - **black** and **isort**: For code formatting and style consistency.
 
+
+![image](https://github.com/user-attachments/assets/b441d6db-f3fe-4ac0-8e59-4f29eeef1a2a)
