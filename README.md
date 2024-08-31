@@ -1,6 +1,3 @@
-Here's a professional README.md file for your "reflection-agent" repository:
-
-```markdown
 # Reflection Agent
 
 **Reflection Agent** is a Python application designed to assist Twitter influencers by generating and refining high-quality tweets. It leverages LangChain and OpenAI's API to generate and critique tweets, providing detailed feedback to enhance virality, style, and overall impact.
@@ -80,21 +77,3 @@ This project relies on the following key Python packages:
 - **python-dotenv**: For loading environment variables from a `.env` file.
 - **black** and **isort**: For code formatting and style consistency.
 
-## Contributing
-
-We welcome contributions! If you'd like to contribute, please fork the repository, create a new branch, and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries or issues, please contact Neal at [neal@bffl.ai](mailto:neal@bffl.ai).
-
----
-
-Happy Tweeting!
-```
-
-This README provides a clear overview of the project, installation instructions, usage examples, and contribution guidelines, making it easy for others to understand and contribute to your repository.
